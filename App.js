@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import FetchLocation from './components/FetchLocation';
+import UserMap from './components/UserMap';
 
 export default class App extends React.Component {
 
@@ -9,7 +10,7 @@ export default class App extends React.Component {
     navigator.geolocation.getCurrentPosition(
       position => 
       {
-        console.log('This is my position: ' + position);
+
       }, 
       err => console.log(err)
     );
@@ -19,6 +20,7 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <FetchLocation onGetLocation={this.getUserLocationHandler} />
+        <UserMap />
       </View>
     );
   }
